@@ -29,14 +29,24 @@ namespace CSharp_Code_Examples
 
                     case "int": // add two numbers together
 
+
+                        try // error handles whether the correct data type is inserted
+                        {
                         Console.WriteLine("Enter the first int: ");
                         int num1 = int.Parse(Console.ReadLine());
 
                         Console.WriteLine("Enter the second int: ");
                         int num2 = int.Parse(Console.ReadLine());
-
                         int result = num1+ num2;
                         Console.WriteLine("Result: " +result);
+
+                        }
+                        catch (Exception ex) 
+                        {
+                           Console.WriteLine(ex.Message);
+                           
+                        }
+                
 
                         break;
 
