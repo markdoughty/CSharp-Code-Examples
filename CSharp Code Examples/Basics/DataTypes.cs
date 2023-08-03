@@ -52,17 +52,50 @@ namespace CSharp_Code_Examples
 
                     case "array": // displays the vehicle types
 
-                        string[] newstringarray = new string[4];
-
-                        newstringarray[0] = "Scooter";
-                        newstringarray[1] = "Boat";
-                        newstringarray[2] = "Bike";
-                        newstringarray[3] = "car";
-
-                        for (int i = 0; i < newstringarray.Length; i++)
+                        try
                         {
-                            Console.WriteLine("Vehicle type: " +  newstringarray[i]);
+                            string[] newstringarray = new string[4];
+
+                            //data is created and stored in the array values
+                            newstringarray[0] = "Scooter";
+                            newstringarray[1] = "Boat";
+                            newstringarray[2] = "Bike";
+                            newstringarray[3] = "car";
+
+                            Console.WriteLine("Select a vehicle from 1 to 5 (5 is all of the vehicles)");
+
+                            int choose = int.Parse(Console.ReadLine());
+
+                            if (choose == 1)
+                            {
+                                Console.WriteLine("Vehicle type: " + newstringarray[0]);
+                            }
+                            if (choose == 2)
+                            {
+                                Console.WriteLine("Vehicle type: " + newstringarray[1]);
+                            }
+                            if (choose == 3)
+                            {
+                                Console.WriteLine("Vehicle type: " + newstringarray[2]);
+                            }
+                            if (choose == 4)
+                            {
+                                Console.WriteLine("Vehicle type: " + newstringarray[3]);
+                            }
+                            if (choose == 5)
+                            {
+                                for (int i = 0; i < newstringarray.Length; i++)
+                                {
+                                Console.WriteLine("Vehicle type: " +  newstringarray[i]);
+                                }
+                            }
+
                         }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
+                        
 
                         break;
 
