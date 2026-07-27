@@ -25,24 +25,25 @@ namespace CSharp_Code_Examples
                 new Student { Name = "Chen", Grade = 91 },
                 new Student { Name = "Dorota", Grade = 63 },
                 new Student { Name = "Ewan", Grade = 47 },
-                new Student { Name = "Fatima", Grade = 78 }
+                new Student { Name = "Fatima", Grade = 78 },
+                new Student { Name = "George", Grade = 32 }
             };
 
             Console.WriteLine("All students:");
             foreach (Student s in students)
                 Console.WriteLine(s.Name + ": " + s.Grade);
 
-            //anything 60 or above is a pass, ordered highest first
-            var passed = students.Where(s => s.Grade >= 60).OrderByDescending(s => s.Grade);
+            //anything 40 or above is a pass, ordered highest first
+            var passed = students.Where(s => s.Grade >= 40).OrderByDescending(s => s.Grade);
 
             Console.WriteLine("");
-            Console.WriteLine("Passed (60+):");
+            Console.WriteLine("Passed (40+):");
             foreach (Student s in passed)
                 Console.WriteLine(s.Name + ": " + s.Grade);
 
             double avg = students.Average(s => s.Grade);
             Student top = students.OrderByDescending(s => s.Grade).First();
-            int passCount = students.Count(s => s.Grade >= 60);
+            int passCount = students.Count(s => s.Grade >= 40);
 
             Console.WriteLine("");
             Console.WriteLine("Average grade: " + avg);
